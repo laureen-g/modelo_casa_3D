@@ -1,6 +1,10 @@
 #include "Casa.h"
 #include <Cube.h>
-
+#include <Sofa.h>
+#include <Mesa.h>
+#include <Cadeira.h>
+#include <Cama.h>
+#include <VasoSanitario.h>
 #include <Shader.h>
 
 Casa::Casa() {
@@ -68,15 +72,34 @@ void Casa::draw(Shader& shader, glm::mat4 view) {
 
     paredeDivisoria2.draw(shader, view);
 
-
-
-
-
-
     Cube paredeDivisoria20(glm::vec3(0.6f, 0.265f, 0.2f),
                      glm::vec3(0.0f),
                      glm::vec3(0.8f, 0.5f, 0.03f));
 
     paredeDivisoria20.draw(shader, view);
+
+
+
+    // SALA - Sofá e Mesa
+    Sofa sofa(glm::vec3(-0.5f, 0.1f, 0.5f), 0.0f);
+    sofa.draw(shader, view);
+
+    Mesa mesaSala(glm::vec3(-0.5f, 0.1f, 0.0f), 0.0f);
+    mesaSala.draw(shader, view);
+
+    // QUARTO - Cama
+    Cama cama(glm::vec3(0.6f, 0.1f, -0.5f), 90.0f);
+    cama.draw(shader, view);
+
+    // COZINHA/SALA DE JANTAR - Mesa e Cadeira
+    Mesa mesaCozinha(glm::vec3(0.6f, 0.1f, 0.6f), 0.0f);
+    mesaCozinha.draw(shader, view);
+
+    Cadeira cadeira(glm::vec3(0.4f, 0.1f, 0.5f), 0.0f);
+    cadeira.draw(shader, view);
+
+    // BANHEIRO - Vaso Sanitário
+    VasoSanitario vaso(glm::vec3(-0.7f, 0.1f, -0.6f), 0.0f);
+    vaso.draw(shader, view);
 
 }
