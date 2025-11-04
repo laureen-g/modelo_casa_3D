@@ -20,6 +20,8 @@ void viraCamera(float x, float y);
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
+float deltaTime = 0.0f;
+float lastFrame = 0.0f;
 
 float angulo_visao = 45.0f;
 float near_plane = 0.1f;
@@ -27,7 +29,7 @@ float far_plane = 100.0f;
 
 glm::mat4 view;
 
-glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+glm::vec3 cameraPos = glm::vec3(0.0f, 0.8f, 5.0f);
 glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
 glm::vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
 
@@ -36,11 +38,9 @@ glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
 
-float sensitivity = 0.03f;
+float sensitivity = 0.15f;
 float yaw = -90.0f;
 float pitch = 0.0f;
-
-
 
 int main() {
     // Cria janela e inicializa OpenGL
@@ -52,8 +52,7 @@ int main() {
     shader.use();
 
     // Carrega texturas
-    //Texture tex1("textura-parede.jpg");
-    Texture tex1("pedra-28.jpg");
+    Texture tex1("textura-parede.jpg");
     Texture tex2("opengl.png");  // logo OpenGL com alpha
 
     //shader.setInt("texture1", 0);
@@ -78,14 +77,18 @@ int main() {
 
     Casa casa;
 
-
     // Loop principal
     while (!glfwWindowShouldClose(app.getWindow())) {
+        float currentFrame = glfwGetTime();
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
+
         // Processa input
         if (glfwGetKey(app.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
             glfwSetWindowShouldClose(app.getWindow(), true);
 
         processInput(app.getWindow());
+
         // Limpa tela e depth buffer
         //glClearColor(0.1f, 0.1f, 0.2f, 1.0f);
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -103,9 +106,9 @@ int main() {
         shader.setMat4("model", model);
 
         // Configura view e projection
-        glm::mat4 projection = glm::perspective(glm::radians(45.0f),
-                                                800.0f / 600.0f,
-                                                0.1f, 100.0f);
+        glm::mat4 projection = glm::perspective(glm::radians(angulo_visao),
+                                                (float)SCR_WIDTH / (float)SCR_HEIGHT,
+                                                near_plane, far_plane);
 
         viraCamera(0.0f, 0.0f);
         view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
@@ -129,18 +132,6 @@ int main() {
 
         //esfera.draw(shader, model);
 
-        //model = glm::rotate(model, (angle * (float) glfwGetTime()) / 5, glm::vec3(1.5f, 4.2f, 0.1f));
-        //shader.setMat4("model", model);
-        //cube3.draw(shader, model);
-
-        //model = glm::rotate(model, (-angle * (float) glfwGetTime()) / 40, glm::vec3(-0.8f, 2.1f, -2.0f));
-        //shader.setMat4("model", model);
-        //cube4.draw(shader, model);
-
-        //model = glm::rotate(model, (angle * (float) glfwGetTime()) / 40, glm::vec3(-0.5f, -0.2f, 1.45f));
-        //shader.setMat4("model", model);
-        //cube4.draw(shader, model);
-
         //model = glm::mat4(1.0f);
         //model = glm::rotate(model, (angle * (float) glfwGetTime()) / -40, glm::vec3(0.0f, 1.0f, 0.0f));
         //cube5.draw(shader, model);
@@ -153,9 +144,7 @@ int main() {
     return 0;
 }
 
-
 void viraCamera(float x, float y) {
-
     yaw += x * sensitivity;
     pitch += y * sensitivity;
 
@@ -175,12 +164,9 @@ void viraCamera(float x, float y) {
     cameraFront = glm::normalize(direction);
 }
 
-
-// process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
-// ---------------------------------------------------------------------------------------------------------
 void processInput(GLFWwindow *window)
 {
-    const float cameraSpeed = 0.01f;
+    const float cameraSpeed = 2.5f * deltaTime;
 
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
@@ -215,23 +201,19 @@ void processInput(GLFWwindow *window)
     }
 
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
-            printf("frente\n");
         cameraPos += cameraSpeed * cameraFront;
     }
 
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
-            printf("atras\n");
         cameraPos -= cameraSpeed * cameraFront;
     }
 
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
-            printf("esquerda\n");
         cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
     }
 
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
-            printf("direita\n");
-         cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
     }
 
     if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
@@ -259,9 +241,10 @@ void processInput(GLFWwindow *window)
     }
 
     if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS) {
-        cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+        cameraPos = glm::vec3(0.0f, 0.8f, 5.0f);
+        yaw = -90.0f;
+        pitch = 0.0f;
     }
-
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
