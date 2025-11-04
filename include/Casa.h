@@ -6,6 +6,11 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <Shader.h>
 
+#include "Sofa.h"
+#include "Mesa.h"
+#include "Cadeira.h"
+#include "Cama.h"
+#include "VasoSanitario.h"
 
 class Casa
 {
