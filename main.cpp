@@ -51,9 +51,9 @@ int main() {
     Shader shader("vertex.glsl", "fragment.glsl");
     shader.use();
 
-    // Carrega texturas
-    Texture tex1("textura-parede.jpg");
-    Texture tex2("opengl.png");  // logo OpenGL com alpha
+    Texture texParede("textura-parede.jpg");  // Light wall texture
+    Texture texPedra("pedra-28.jpg");         // Stone texture for furniture
+    Texture tex2("opengl.png");               // logo OpenGL with alpha
 
     //shader.setInt("texture1", 0);
     //shader.setInt("texture2", 1);
@@ -116,15 +116,13 @@ int main() {
         shader.setMat4("view", view);
 
         // Bind texturas
-        tex1.bind(0);
+        texParede.bind(0);
         tex2.bind(1);
 
         //model = glm::rotate(model, (angle * (float) glfwGetTime()) / 20, glm::vec3(0.5f, -0.2f, 0.5f));
         shader.setMat4("model", model);
 
-        //cubeGrande.draw(shader, model);
-
-        casa.draw(shader, model);
+        casa.draw(shader, model, &texParede, &texPedra);
 
         //prisma.draw(shader, model);
 
@@ -142,6 +140,15 @@ int main() {
     }
 
     return 0;
+}
+
+// glfw: whenever the window size changed (by OS or user resize) this callback function executes
+// ---------------------------------------------------------------------------------------------
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    // make sure the viewport matches the new window dimensions; note that width and
+    // height will be significantly larger than specified on retina displays.
+    glViewport(0, 0, width, height);
 }
 
 void viraCamera(float x, float y) {
@@ -245,13 +252,4 @@ void processInput(GLFWwindow *window)
         yaw = -90.0f;
         pitch = 0.0f;
     }
-}
-
-// glfw: whenever the window size changed (by OS or user resize) this callback function executes
-// ---------------------------------------------------------------------------------------------
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-    // make sure the viewport matches the new window dimensions; note that width and
-    // height will be significantly larger than specified on retina displays.
-    glViewport(0, 0, width, height);
 }
