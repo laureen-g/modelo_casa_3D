@@ -2,6 +2,10 @@
 #define LUMINARIA_H
 
 #include <Cube.h>
+#include <Cylinder.h>
+#include <Sphere.h>
+#include <Prism.h>
+#include <Object.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <Shader.h>
@@ -15,7 +19,7 @@ public:
 private:
     glm::vec3 position;
     float rotationAngle;
-    std::vector<Cube*> parts;
+    std::vector<Object*> parts;
     void init();
 };
 

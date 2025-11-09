@@ -15,6 +15,8 @@
 #include "Geladeira.h"
 #include "Luminaria.h"
 #include "Estante.h"
+#include "Espelho.h"
+#include "Abajur.h"
 
 class Casa
 {

@@ -1,7 +1,8 @@
-#ifndef ESTANTE_H
-#define ESTANTE_H
+#ifndef ABAJUR_H
+#define ABAJUR_H
 
 #include <Cube.h>
+#include <Cylinder.h>
 #include <Prism.h>
 #include <Object.h>
 #include <glm/glm.hpp>
@@ -9,16 +10,16 @@
 #include <Shader.h>
 #include <vector>
 
-class Estante {
+class Abajur {
 public:
-    Estante(glm::vec3 pos = glm::vec3(0.0f), float rotation = 0.0f);
+    Abajur(glm::vec3 pos = glm::vec3(0.0f), float rotation = 0.0f);
     void draw(Shader& shader, glm::mat4 model);
 
 private:
     glm::vec3 position;
     float rotationAngle;
-    std::vector<Object*> parts; // Changed from Cube* to Object* to support multiple shape types
+    std::vector<Object*> parts;
     void init();
 };
 
-#endif // ESTANTE_H
+#endif // ABAJUR_H

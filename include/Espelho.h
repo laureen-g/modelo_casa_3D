@@ -1,24 +1,24 @@
-#ifndef ESTANTE_H
-#define ESTANTE_H
+#ifndef ESPELHO_H
+#define ESPELHO_H
 
 #include <Cube.h>
-#include <Prism.h>
+#include <Sphere.h>
 #include <Object.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <Shader.h>
 #include <vector>
 
-class Estante {
+class Espelho {
 public:
-    Estante(glm::vec3 pos = glm::vec3(0.0f), float rotation = 0.0f);
+    Espelho(glm::vec3 pos = glm::vec3(0.0f), float rotation = 0.0f);
     void draw(Shader& shader, glm::mat4 model);
 
 private:
     glm::vec3 position;
     float rotationAngle;
-    std::vector<Object*> parts; // Changed from Cube* to Object* to support multiple shape types
+    std::vector<Object*> parts;
     void init();
 };
 
-#endif // ESTANTE_H
+#endif // ESPELHO_H
