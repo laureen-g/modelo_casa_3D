@@ -6,7 +6,7 @@ Mesa::Mesa(glm::vec3 pos, float rotation)
 }
 
 void Mesa::init() {
-    // Tampo da mesa
+    // Tampo da mesa (mantém como Cube)
     parts.push_back(new Cube(
         glm::vec3(0.0f, 0.075f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),
@@ -15,35 +15,39 @@ void Mesa::init() {
     ));
 
     // Perna frontal esquerda
-    parts.push_back(new Cube(
+    parts.push_back(new Cylinder(
         glm::vec3(-0.065f, 0.035f, 0.04f),
         glm::vec3(0.0f, 1.0f, 0.0f),
         glm::vec3(0.01f, 0.07f, 0.01f),
-        0.0f
+        0.0f,
+        16
     ));
 
     // Perna frontal direita
-    parts.push_back(new Cube(
+    parts.push_back(new Cylinder(
         glm::vec3(0.065f, 0.035f, 0.04f),
         glm::vec3(0.0f, 1.0f, 0.0f),
         glm::vec3(0.01f, 0.07f, 0.01f),
-        0.0f
+        0.0f,
+        16
     ));
 
     // Perna traseira esquerda
-    parts.push_back(new Cube(
+    parts.push_back(new Cylinder(
         glm::vec3(-0.065f, 0.035f, -0.04f),
         glm::vec3(0.0f, 1.0f, 0.0f),
         glm::vec3(0.01f, 0.07f, 0.01f),
-        0.0f
+        0.0f,
+        16
     ));
 
     // Perna traseira direita
-    parts.push_back(new Cube(
+    parts.push_back(new Cylinder(
         glm::vec3(0.065f, 0.035f, -0.04f),
         glm::vec3(0.0f, 1.0f, 0.0f),
         glm::vec3(0.01f, 0.07f, 0.01f),
-        0.0f
+        0.0f,
+        16
     ));
 }
 

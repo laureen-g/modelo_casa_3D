@@ -8,6 +8,8 @@
 #include <Geladeira.h>
 #include <Luminaria.h>
 #include <Estante.h>
+#include <Espelho.h>
+#include <Abajur.h>
 #include <Shader.h>
 
 Casa::Casa() {
@@ -99,9 +101,15 @@ void Casa::draw(Shader& shader, glm::mat4 view, Texture* wallTexture, Texture* f
     Luminaria luminariaLiving(glm::vec3(-0.3f, 0.1f, 0.3f), 0.0f);
     luminariaLiving.draw(shader, view);
 
+    Espelho espelho(glm::vec3(-0.2f, 0.1f, 0.7f), 0.0f);
+    espelho.draw(shader, view);
+
     // QUARTO - Cama
     Cama cama(glm::vec3(0.6f, 0.1f, -0.5f), 90.0f);
     cama.draw(shader, view);
+
+    Abajur abajur(glm::vec3(0.8f, 0.1f, -0.3f), 0.0f);
+    abajur.draw(shader, view);
 
     // COZINHA/SALA DE JANTAR - Mesa, Cadeira e Geladeira
     Mesa mesaCozinha(glm::vec3(0.6f, 0.1f, 0.6f), 0.0f);

@@ -6,35 +6,38 @@ VasoSanitario::VasoSanitario(glm::vec3 pos, float rotation)
 }
 
 void VasoSanitario::init() {
-    // Base do vaso
-    parts.push_back(new Cube(
-        glm::vec3(0.0f, 0.015f, 0.0f),
+
+    // Base/pedestal (cilindro curto e largo)
+    parts.push_back(new Cylinder(
+        glm::vec3(0.0f, 0.005f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),
-        glm::vec3(0.05f, 0.03f, 0.06f),
+        glm::vec3(0.02f, 0.01f, 0.02f),
+        0.0f,
+        16
+    ));
+
+    // Bacia principal (cilindro mais proporcional)
+    parts.push_back(new Cylinder(
+        glm::vec3(0.0f, 0.025f, 0.0f),
+        glm::vec3(0.0f, 1.0f, 0.0f),
+        glm::vec3(0.022f, 0.04f, 0.022f),
+        0.0f,
+        20
+    ));
+
+    // Tampa/assento (cubo achatado em cima da bacia)
+    parts.push_back(new Cube(
+        glm::vec3(0.0f, 0.052f, 0.0f),
+        glm::vec3(0.0f, 1.0f, 0.0f),
+        glm::vec3(0.025f, 0.004f, 0.027f),
         0.0f
     ));
 
-    // Parte principal do vaso (bacia)
+    // Caixa acoplada atrás (cubo vertical, menor e mais proporcional)
     parts.push_back(new Cube(
-        glm::vec3(0.0f, 0.035f, 0.0f),
+        glm::vec3(0.0f, 0.045f, -0.025f),
         glm::vec3(0.0f, 1.0f, 0.0f),
-        glm::vec3(0.045f, 0.02f, 0.055f),
-        0.0f
-    ));
-
-    // Tampa do vaso
-    parts.push_back(new Cube(
-        glm::vec3(0.0f, 0.05f, 0.0f),
-        glm::vec3(0.0f, 1.0f, 0.0f),
-        glm::vec3(0.048f, 0.005f, 0.058f),
-        0.0f
-    ));
-
-    // Caixa acoplada (parte de trás)
-    parts.push_back(new Cube(
-        glm::vec3(0.0f, 0.065f, -0.025f),
-        glm::vec3(0.0f, 1.0f, 0.0f),
-        glm::vec3(0.045f, 0.05f, 0.02f),
+        glm::vec3(0.028f, 0.04f, 0.016f),
         0.0f
     ));
 }
