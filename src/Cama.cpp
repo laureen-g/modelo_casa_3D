@@ -45,6 +45,22 @@ void Cama::init() {
         glm::vec3(0.015f, 0.03f, 0.015f),
         0.0f
     ));
+
+    // Travesseiro esquerdo
+    parts.push_back(new Cube(
+        glm::vec3(-0.05f, 0.075f, -0.09f),
+        glm::vec3(0.0f, 1.0f, 0.0f),
+        glm::vec3(0.06f, 0.015f, 0.04f),
+        0.0f
+    ));
+
+    // Travesseiro direito
+    parts.push_back(new Cube(
+        glm::vec3(0.05f, 0.075f, -0.09f),
+        glm::vec3(0.0f, 1.0f, 0.0f),
+        glm::vec3(0.06f, 0.015f, 0.04f),
+        0.0f
+    ));
 }
 
 void Cama::draw(Shader& shader, glm::mat4 model) {
