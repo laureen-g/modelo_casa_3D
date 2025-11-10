@@ -1,7 +1,9 @@
 #ifndef MESA_H
 #define MESA_H
 
+#include <Object.h>
 #include <Cube.h>
+#include <Cylinder.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <Shader.h>
@@ -15,7 +17,7 @@ public:
 private:
     glm::vec3 position;
     float rotationAngle;
-    std::vector<Cube*> parts;
+    std::vector<Object*> parts;
     void init();
 };
 

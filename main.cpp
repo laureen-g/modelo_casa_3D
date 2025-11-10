@@ -44,7 +44,7 @@ float pitch = 0.0f;
 
 int main() {
     // Cria janela e inicializa OpenGL
-    Application app(1024, 768, "Cubos OOP");
+    Application app(1024, 768, "Casa 3D");
     if (!app.init()) return -1;
 
     // Shader
