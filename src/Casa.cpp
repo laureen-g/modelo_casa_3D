@@ -95,11 +95,11 @@ void Casa::draw(Shader& shader, glm::mat4 view,
                      glm::vec3(0.8f, 0.5f, 0.03f));
 
     paredeDivisoria20.draw(shader, view);
-/*
+
     // SALA - Sofá, Mesa, Estante e Luminária
     Sofa sofa(glm::vec3(-0.5f, 0.1f, 0.5f), 0.0f);
     sofa.draw(shader, view, texSofa);
-*/
+
     Mesa mesaSala(glm::vec3(-0.5f, 0.1f, 0.0f), 0.0f);
     mesaSala.draw(shader, view);
 

@@ -76,6 +76,11 @@
         //texSofa.push_back(new Texture("sofa_marrom.jpg"));
         //texSofa.push_back(new Texture("sofa_marrom.jpg"));
         //texSofa.push_back(new Texture("sofa_marrom.jpg"));
+        texSofa.push_back(new Texture("madeira_cama.jpg"));
+        texSofa.push_back(new Texture("madeira_cama.jpg"));
+        texSofa.push_back(new Texture("madeira_cama.jpg"));
+        texSofa.push_back(new Texture("madeira_cama.jpg"));
+
 
         // TEXTURA DA ESTANTE
         //texEstante.push_back(new Texture("prateleira_estante.jpg"));
