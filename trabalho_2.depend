@@ -1184,7 +1184,7 @@
 	<glm/gtc/matrix_transform.hpp>
 	<Shader.h>
 
-1762828462 source:c:\users\germa\documents\trabalho_2\main.cpp
+1762904993 source:c:\users\germa\documents\trabalho_2\main.cpp
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 	<glm/glm.hpp>
@@ -1245,7 +1245,7 @@
 	"Object.h"
 	<vector>
 
-1762826214 c:\users\germa\documents\trabalho_2\include\casa.h
+1762904992 c:\users\germa\documents\trabalho_2\include\casa.h
 	<Cube.h>
 	<glm/glm.hpp>
 	<glm/gtc/matrix_transform.hpp>
@@ -1267,7 +1267,7 @@
 	"Application.h"
 	<iostream>
 
-1762828500 source:c:\users\germa\documents\trabalho_2\src\casa.cpp
+1762904990 source:c:\users\germa\documents\trabalho_2\src\casa.cpp
 	"Casa.h"
 	<Cube.h>
 	<Sofa.h>
@@ -1353,14 +1353,15 @@
 	<Shader.h>
 	<vector>
 
-1762311332 c:\users\germa\documents\trabalho_2\include\cadeira.h
+1762904989 c:\users\germa\documents\trabalho_2\include\cadeira.h
 	<Cube.h>
 	<glm/glm.hpp>
 	<glm/gtc/matrix_transform.hpp>
 	<Shader.h>
 	<vector>
+	<Texture.h>
 
-1762826279 c:\users\germa\documents\trabalho_2\include\cama.h
+1762902093 c:\users\germa\documents\trabalho_2\include\cama.h
 	<Cube.h>
 	<glm/glm.hpp>
 	<glm/gtc/matrix_transform.hpp>
@@ -1395,7 +1396,7 @@
 	<Shader.h>
 	<vector>
 
-1762827900 c:\users\germa\documents\trabalho_2\include\estante.h
+1762902439 c:\users\germa\documents\trabalho_2\include\estante.h
 	<Cube.h>
 	<Prism.h>
 	<Object.h>
@@ -1405,13 +1406,13 @@
 	<vector>
 	<Texture.h>
 
-1762311331 source:c:\users\germa\documents\trabalho_2\src\cadeira.cpp
+1762905070 source:c:\users\germa\documents\trabalho_2\src\cadeira.cpp
 	"Cadeira.h"
 
-1762826225 source:c:\users\germa\documents\trabalho_2\src\cama.cpp
+1762902094 source:c:\users\germa\documents\trabalho_2\src\cama.cpp
 	"Cama.h"
 
-1762828174 source:c:\users\germa\documents\trabalho_2\src\estante.cpp
+1762904540 source:c:\users\germa\documents\trabalho_2\src\estante.cpp
 	"Estante.h"
 
 1762311478 source:c:\users\germa\documents\trabalho_2\src\geladeira.cpp
@@ -1429,7 +1430,7 @@
 1762713267 source:c:\users\germa\documents\trabalho_2\src\vasosanitario.cpp
 	"VasoSanitario.h"
 
-1762736167 c:\users\germa\documents\trabalho_2\include\espelho.h
+1762903706 c:\users\germa\documents\trabalho_2\include\espelho.h
 	<Cube.h>
 	<Sphere.h>
 	<Object.h>
@@ -1437,6 +1438,7 @@
 	<glm/gtc/matrix_transform.hpp>
 	<Shader.h>
 	<vector>
+	<Texture.h>
 
 1762736132 c:\users\germa\documents\trabalho_2\include\abajur.h
 	<Cube.h>
@@ -1451,6 +1453,6 @@
 1762736133 source:c:\users\germa\documents\trabalho_2\src\abajur.cpp
 	"Abajur.h"
 
-1762736165 source:c:\users\germa\documents\trabalho_2\src\espelho.cpp
+1762904681 source:c:\users\germa\documents\trabalho_2\src\espelho.cpp
 	"Espelho.h"
 

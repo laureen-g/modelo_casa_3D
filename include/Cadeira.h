@@ -6,11 +6,12 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <Shader.h>
 #include <vector>
+#include <Texture.h>
 
 class Cadeira {
 public:
     Cadeira(glm::vec3 pos = glm::vec3(0.0f), float rotation = 0.0f);
-    void draw(Shader& shader, glm::mat4 model);
+    void draw(Shader& shader, glm::mat4 model, const std::vector<Texture*>& textures);
 
 private:
     glm::vec3 position;

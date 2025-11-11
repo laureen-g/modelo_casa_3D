@@ -20,7 +20,9 @@ void Casa::draw(Shader& shader, glm::mat4 view,
                 const std::vector<Texture*>& texCasa,
                 const std::vector<Texture*>& texCama,
                 const std::vector<Texture*>& texSofa,
-                const std::vector<Texture*>& texEstante) {
+                const std::vector<Texture*>& texEstante,
+                const std::vector<Texture*>& texEspelho,
+                const std::vector<Texture*>& texCadeira) {
 
     shader.use();
     shader.setInt("texture1", 0);
@@ -104,13 +106,13 @@ void Casa::draw(Shader& shader, glm::mat4 view,
     mesaSala.draw(shader, view);
 
     Estante estante(glm::vec3(-0.8f, 0.1f, 0.7f), 0.0f);
-    estante.draw(shader, view);
+    estante.draw(shader, view, texEstante);
 
     Luminaria luminariaLiving(glm::vec3(-0.3f, 0.1f, 0.3f), 0.0f);
     luminariaLiving.draw(shader, view);
 
     Espelho espelho(glm::vec3(-0.2f, 0.1f, 0.7f), 0.0f);
-    espelho.draw(shader, view);
+    espelho.draw(shader, view, texEspelho);
 
     // QUARTO - Cama
     Cama cama(glm::vec3(0.6f, 0.1f, -0.5f), 90.0f);
@@ -124,7 +126,7 @@ void Casa::draw(Shader& shader, glm::mat4 view,
     mesaCozinha.draw(shader, view);
 
     Cadeira cadeira(glm::vec3(0.4f, 0.1f, 0.5f), 0.0f);
-    cadeira.draw(shader, view);
+    cadeira.draw(shader, view, texCadeira);
 
     Geladeira geladeira(glm::vec3(0.85f, 0.1f, 0.7f), 270.0f);
     geladeira.draw(shader, view);

@@ -56,6 +56,8 @@
         std::vector<Texture*> texCama;
         std::vector<Texture*> texSofa;
         std::vector<Texture*> texEstante;
+        std::vector<Texture*> texEspelho;
+        std::vector<Texture*> texCadeira;
 
         // TEXTURA DA CASA
         texCasa.push_back(new Texture("chao.jpg"));
@@ -71,21 +73,38 @@
         texCama.push_back(new Texture("travesseiro.jpg"));
 
         // TEXTURA DO SOFA
-        //texSofa.push_back(new Texture("sofa_vermelho.jpg"));
-        //texSofa.push_back(new Texture("sofa_marrom.jpg"));
-        //texSofa.push_back(new Texture("sofa_marrom.jpg"));
-        //texSofa.push_back(new Texture("sofa_marrom.jpg"));
-        //texSofa.push_back(new Texture("sofa_marrom.jpg"));
-        texSofa.push_back(new Texture("madeira_cama.jpg"));
-        texSofa.push_back(new Texture("madeira_cama.jpg"));
-        texSofa.push_back(new Texture("madeira_cama.jpg"));
-        texSofa.push_back(new Texture("madeira_cama.jpg"));
+        texSofa.push_back(new Texture("sofa_vermelho.png"));
+        texSofa.push_back(new Texture("sofa_vermelho.png"));
+        texSofa.push_back(new Texture("sofa_vermelho_escuro.png"));
+        texSofa.push_back(new Texture("sofa_vermelho_escuro.png"));
 
 
         // TEXTURA DA ESTANTE
-        //texEstante.push_back(new Texture("prateleira_estante.jpg"));
-        //texEstante.push_back(new Texture("madeira_estante.jpg"));
+        texEstante.push_back(new Texture("madeira_estante.jpg"));
+        texEstante.push_back(new Texture("madeira_estante.jpg"));
+        texEstante.push_back(new Texture("madeira_estante.jpg"));
+        texEstante.push_back(new Texture("prateleira_estante.jpg"));
+        texEstante.push_back(new Texture("prateleira_estante.jpg"));
+        texEstante.push_back(new Texture("prateleira_estante.jpg"));
+        texEstante.push_back(new Texture("prateleira_estante.jpg"));
+        texEstante.push_back(new Texture("madeira_estante.jpg"));
+        texEstante.push_back(new Texture("madeira_estante.jpg"));
 
+        // TEXTURA ESPELHO
+        texEspelho.push_back(new Texture("prateleira_estante.jpg"));
+        texEspelho.push_back(new Texture("prateleira_estante.jpg"));
+        texEspelho.push_back(new Texture("prateleira_estante.jpg"));
+        texEspelho.push_back(new Texture("prateleira_estante.jpg"));
+        texEspelho.push_back(new Texture("espelho.png"));
+        texEspelho.push_back(new Texture("sofa_vermelho.png"));
+
+        // TEXTURA CADEIRA
+        texCadeira.push_back(new Texture("amarelo_cadeira.png"));
+        texCadeira.push_back(new Texture("amarelo_cadeira.png"));
+        texCadeira.push_back(new Texture("prateleira_estante.jpg"));
+        texCadeira.push_back(new Texture("prateleira_estante.jpg"));
+        texCadeira.push_back(new Texture("prateleira_estante.jpg"));
+        texCadeira.push_back(new Texture("prateleira_estante.jpg"));
 
         // Ativa depth test
         glEnable(GL_DEPTH_TEST);
@@ -130,7 +149,7 @@
 
             shader.setMat4("model", model);
 
-            casa.draw(shader, model, texCasa, texCama, texSofa, texEstante);
+            casa.draw(shader, model, texCasa, texCama, texSofa, texEstante, texEspelho, texCadeira);
             //casa.draw(shader, model);
 
             // Swap buffers e eventos
