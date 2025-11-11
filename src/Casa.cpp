@@ -99,38 +99,38 @@ void Casa::draw(Shader& shader, glm::mat4 view,
     // SALA - Sofá, Mesa, Estante e Luminária
     Sofa sofa(glm::vec3(-0.5f, 0.1f, 0.5f), 0.0f);
     sofa.draw(shader, view, texSofa);
-
-    //Mesa mesaSala(glm::vec3(-0.5f, 0.1f, 0.0f), 0.0f);
-    //mesaSala.draw(shader, view);
-
-    //Estante estante(glm::vec3(-0.8f, 0.1f, 0.7f), 0.0f);
-    //estante.draw(shader, view);
-
-    //Luminaria luminariaLiving(glm::vec3(-0.3f, 0.1f, 0.3f), 0.0f);
-    //luminariaLiving.draw(shader, view);
-
-    //Espelho espelho(glm::vec3(-0.2f, 0.1f, 0.7f), 0.0f);
-    //espelho.draw(shader, view);
 */
+    Mesa mesaSala(glm::vec3(-0.5f, 0.1f, 0.0f), 0.0f);
+    mesaSala.draw(shader, view);
+
+    Estante estante(glm::vec3(-0.8f, 0.1f, 0.7f), 0.0f);
+    estante.draw(shader, view);
+
+    Luminaria luminariaLiving(glm::vec3(-0.3f, 0.1f, 0.3f), 0.0f);
+    luminariaLiving.draw(shader, view);
+
+    Espelho espelho(glm::vec3(-0.2f, 0.1f, 0.7f), 0.0f);
+    espelho.draw(shader, view);
+
     // QUARTO - Cama
     Cama cama(glm::vec3(0.6f, 0.1f, -0.5f), 90.0f);
     cama.draw(shader, view, texCama);
 
-    //Abajur abajur(glm::vec3(0.8f, 0.1f, -0.3f), 0.0f);
-    //abajur.draw(shader, view);
+    Abajur abajur(glm::vec3(0.8f, 0.1f, -0.3f), 0.0f);
+    abajur.draw(shader, view);
 
     // COZINHA/SALA DE JANTAR - Mesa, Cadeira e Geladeira
-    //Mesa mesaCozinha(glm::vec3(0.6f, 0.1f, 0.6f), 0.0f);
-    //mesaCozinha.draw(shader, view);
+    Mesa mesaCozinha(glm::vec3(0.6f, 0.1f, 0.6f), 0.0f);
+    mesaCozinha.draw(shader, view);
 
-    //Cadeira cadeira(glm::vec3(0.4f, 0.1f, 0.5f), 0.0f);
-    //cadeira.draw(shader, view);
+    Cadeira cadeira(glm::vec3(0.4f, 0.1f, 0.5f), 0.0f);
+    cadeira.draw(shader, view);
 
-    //Geladeira geladeira(glm::vec3(0.85f, 0.1f, 0.7f), 270.0f);
-    //geladeira.draw(shader, view);
+    Geladeira geladeira(glm::vec3(0.85f, 0.1f, 0.7f), 270.0f);
+    geladeira.draw(shader, view);
 
     // BANHEIRO - Vaso Sanitário
-    //VasoSanitario vaso(glm::vec3(-0.7f, 0.1f, -0.6f), 0.0f);
-    //vaso.draw(shader, view);
+    VasoSanitario vaso(glm::vec3(-0.7f, 0.1f, -0.6f), 0.0f);
+    vaso.draw(shader, view);
 
 }

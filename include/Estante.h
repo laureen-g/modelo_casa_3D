@@ -8,6 +8,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <Shader.h>
 #include <vector>
+#include <Texture.h>
 
 class Estante {
 public:

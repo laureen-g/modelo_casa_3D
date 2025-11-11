@@ -22,6 +22,14 @@ void Estante::init() {
         0.0f
     ));
 
+    // Fundo da estante
+    parts.push_back(new Cube(
+        glm::vec3(0.0f, 0.1f, -0.04f),
+        glm::vec3(0.0f, 1.0f, 0.0f),
+        glm::vec3(0.12f, 0.2f, 0.005f),
+        0.0f
+    ));
+
     // Prateleiras (4 níveis)
     for (int i = 0; i < 4; i++) {
         parts.push_back(new Cube(
@@ -31,14 +39,6 @@ void Estante::init() {
             0.0f
         ));
     }
-
-    // Fundo da estante
-    parts.push_back(new Cube(
-        glm::vec3(0.0f, 0.1f, -0.04f),
-        glm::vec3(0.0f, 1.0f, 0.0f),
-        glm::vec3(0.12f, 0.2f, 0.005f),
-        0.0f
-    ));
 
     // Suporte triangular esquerdo
     parts.push_back(new Prism(
@@ -65,6 +65,20 @@ void Estante::draw(Shader& shader, glm::mat4 model) {
     model = glm::translate(model, position);
     model = glm::rotate(model, glm::radians(rotationAngle), glm::vec3(0.0f, 1.0f, 0.0f));
 
+    /*std::vector<Texture*> texEstante;
+    texEstante.push_back(new Texture("madeira_estante.jpg"));
+    texEstante.push_back(new Texture("madeira_estante.jpg"));
+    texEstante.push_back(new Texture("madeira_estante.jpg"));
+    texEstante.push_back(new Texture("prateleira_estante.jpg"));
+    texEstante.push_back(new Texture("prateleira_estante.jpg"));
+    texEstante.push_back(new Texture("prateleira_estante.jpg"));
+
+    for (i = 0; i < parts.size(); i++) {
+        shader.use();
+        shader.setInt("texture1", 0);
+        texEstante[i]->bind(0);
+        parts[i]->draw(shader, model);
+    }*/
     for (auto part : parts) {
         part->draw(shader, model);
     }

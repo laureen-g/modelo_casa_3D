@@ -1267,7 +1267,7 @@
 	"Application.h"
 	<iostream>
 
-1762826438 source:c:\users\germa\documents\trabalho_2\src\casa.cpp
+1762827847 source:c:\users\germa\documents\trabalho_2\src\casa.cpp
 	"Casa.h"
 	<Cube.h>
 	<Sofa.h>
@@ -1395,7 +1395,7 @@
 	<Shader.h>
 	<vector>
 
-1762713267 c:\users\germa\documents\trabalho_2\include\estante.h
+1762827900 c:\users\germa\documents\trabalho_2\include\estante.h
 	<Cube.h>
 	<Prism.h>
 	<Object.h>
@@ -1403,6 +1403,7 @@
 	<glm/gtc/matrix_transform.hpp>
 	<Shader.h>
 	<vector>
+	<Texture.h>
 
 1762311331 source:c:\users\germa\documents\trabalho_2\src\cadeira.cpp
 	"Cadeira.h"
