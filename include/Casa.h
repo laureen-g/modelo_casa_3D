@@ -6,6 +6,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <Shader.h>
 #include <Texture.h>
+#include <vector>
 
 #include "Sofa.h"
 #include "Mesa.h"
@@ -22,7 +23,11 @@ class Casa
 {
     public:
         Casa();
-        void draw(Shader& shader, glm::mat4 view, Texture* wallTexture, Texture* furnitureTexture);
+        void draw(Shader& shader, glm::mat4 view,
+          const std::vector<Texture*>& texCasa,
+          const std::vector<Texture*>& texCama,
+          const std::vector<Texture*>& texSofa,
+          const std::vector<Texture*>& texEstante);
 
     private:
 };
