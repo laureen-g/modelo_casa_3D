@@ -48,7 +48,7 @@ void Geladeira::init() {
     ));
 }
 
-void Geladeira::draw(Shader& shader, glm::mat4 model,  const std::vector<Texture*>& textures) {
+void Geladeira::draw(Shader& shader, glm::mat4 model, const std::vector<Texture*>& textures) {
     model = glm::translate(model, position);
     model = glm::rotate(model, glm::radians(rotationAngle), glm::vec3(0.0f, 1.0f, 0.0f));
 

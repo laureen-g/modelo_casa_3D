@@ -42,11 +42,14 @@ void VasoSanitario::init() {
     ));
 }
 
-void VasoSanitario::draw(Shader& shader, glm::mat4 model) {
+void VasoSanitario::draw(Shader& shader, glm::mat4 model, const std::vector<Texture*>& textures) {
     model = glm::translate(model, position);
     model = glm::rotate(model, glm::radians(rotationAngle), glm::vec3(0.0f, 1.0f, 0.0f));
 
     for (auto part : parts) {
+        shader.use();
+        shader.setInt("texture1", 0);
+        textures[0]->bind(0);
         part->draw(shader, model);
     }
 }
