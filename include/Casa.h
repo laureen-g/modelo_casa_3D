@@ -29,7 +29,9 @@ class Casa
           const std::vector<Texture*>& texSofa,
           const std::vector<Texture*>& texEstante,
           const std::vector<Texture*>& texEspelho,
-          const std::vector<Texture*>& texCadeira);
+          const std::vector<Texture*>& texCadeira,
+          const std::vector<Texture*>& texMesa,
+          const std::vector<Texture*>& texGeladeira);
 
     private:
 };

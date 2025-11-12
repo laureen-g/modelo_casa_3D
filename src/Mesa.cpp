@@ -51,11 +51,14 @@ void Mesa::init() {
     ));
 }
 
-void Mesa::draw(Shader& shader, glm::mat4 model) {
+void Mesa::draw(Shader& shader, glm::mat4 model, const std::vector<Texture*>& textures) {
     model = glm::translate(model, position);
     model = glm::rotate(model, glm::radians(rotationAngle), glm::vec3(0.0f, 1.0f, 0.0f));
 
-    for (auto part : parts) {
-        part->draw(shader, model);
+    for (int i=0; i < parts.size(); i++) {
+        shader.use();
+        shader.setInt("texture1", 0);
+        textures[i]->bind(0);
+        parts[i]->draw(shader, model);
     }
 }

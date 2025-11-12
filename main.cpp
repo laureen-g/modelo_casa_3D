@@ -58,6 +58,8 @@
         std::vector<Texture*> texEstante;
         std::vector<Texture*> texEspelho;
         std::vector<Texture*> texCadeira;
+        std::vector<Texture*> texMesa;
+        std::vector<Texture*> texGeladeira;
 
         // TEXTURA DA CASA
         texCasa.push_back(new Texture("chao.jpg"));
@@ -106,6 +108,20 @@
         texCadeira.push_back(new Texture("prateleira_estante.jpg"));
         texCadeira.push_back(new Texture("prateleira_estante.jpg"));
 
+        // TEXTURA MESAS
+        texMesa.push_back(new Texture("madeira_estante.jpg"));
+        texMesa.push_back(new Texture("espelho.png"));
+        texMesa.push_back(new Texture("espelho.png"));
+        texMesa.push_back(new Texture("espelho.png"));
+        texMesa.push_back(new Texture("espelho.png"));
+
+        // TEXTURA GELADEIRA
+        texGeladeira.push_back(new Texture("geladeira_2.png"));
+        texGeladeira.push_back(new Texture("geladeira.png"));
+        texGeladeira.push_back(new Texture("geladeira.png"));
+        texGeladeira.push_back(new Texture("prateleira_estante.jpg"));
+        texGeladeira.push_back(new Texture("prateleira_estante.jpg"));
+
         // Ativa depth test
         glEnable(GL_DEPTH_TEST);
 
@@ -149,8 +165,7 @@
 
             shader.setMat4("model", model);
 
-            casa.draw(shader, model, texCasa, texCama, texSofa, texEstante, texEspelho, texCadeira);
-            //casa.draw(shader, model);
+            casa.draw(shader, model, texCasa, texCama, texSofa, texEstante, texEspelho, texCadeira, texMesa, texGeladeira);
 
             // Swap buffers e eventos
             glfwSwapBuffers(app.getWindow());
