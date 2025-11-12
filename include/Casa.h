@@ -18,6 +18,7 @@
 #include "Estante.h"
 #include "Espelho.h"
 #include "Abajur.h"
+#include "Comoda.h"
 
 class Casa
 {

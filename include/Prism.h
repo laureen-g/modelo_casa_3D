@@ -13,7 +13,7 @@ public:
           int sides = 3,
           float height = 2.0f);
 
-    void draw(Shader& shader, glm::mat4 view) override;
+    void draw(Shader& shader, glm::mat4 model) override;
 
 private:
     int sides;
