@@ -17,19 +17,18 @@ void Luminaria::init() {
     parts.push_back(new Cylinder(
         glm::vec3(0.0f, 0.1f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),
-        glm::vec3(0.008f, 0.18f, 0.008f),
+        glm::vec3(0.008f, 0.19f, 0.008f),
         0.0f,
         16
     ));
 
-
     parts.push_back(new Prism(
-        glm::vec3(-0.3f, 0.3f, 0.3f),
+        glm::vec3(0.0f, 0.20f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),
-        glm::vec3(0.035f, 1.0f, 0.035f),
+        glm::vec3(0.06f, 0.06f, 0.06f),
         0.0f,
         8,
-        0.08f
+        0.22f
     ));
 }
 
@@ -37,10 +36,10 @@ void Luminaria::draw(Shader& shader, glm::mat4 model, const std::vector<Texture*
     model = glm::translate(model, position);
     model = glm::rotate(model, glm::radians(rotationAngle), glm::vec3(0.0f, 1.0f, 0.0f));
 
-    for (int i=0; i < parts.size(); i++) {
+    for (int i=0; i < 3; i++) {
         shader.use();
         shader.setInt("texture1", 0);
-        textures[i]->bind(0);
+        textures[i % textures.size()]->bind(0);
         parts[i]->draw(shader, model);
     }
 }

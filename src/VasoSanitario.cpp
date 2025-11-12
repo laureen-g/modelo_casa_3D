@@ -33,7 +33,7 @@ void VasoSanitario::init() {
         0.0f
     ));
 
-    // Caixa acoplada atrás (cubo vertical, menor e mais proporcional)
+    // Caixa acoplada atras (cubo vertical, menor e mais proporcional)
     parts.push_back(new Cube(
         glm::vec3(0.0f, 0.045f, -0.025f),
         glm::vec3(0.0f, 1.0f, 0.0f),

@@ -30,7 +30,7 @@ void Estante::init() {
         0.0f
     ));
 
-    // Prateleiras (4 níveis)
+    // Prateleiras (4 niveis)
     for (int i = 0; i < 4; i++) {
         parts.push_back(new Cube(
             glm::vec3(0.0f, 0.05f * i + 0.01f, 0.0f),

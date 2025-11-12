@@ -20,14 +20,14 @@ void Prism::generatePrism()
     float radius = 1.0f;
     float halfHeight = height / 2.0f;
 
-    // Gerar vértices da base inferior e superior
+    // Gerar vrtices da base inferior e superior
     for (int i = 0; i <= sides; ++i)
     {
         float angle = (float)i * 2.0f * M_PI / sides;
         float x = radius * cos(angle);
         float z = radius * sin(angle);
 
-        // Vértice da base inferior
+        // Vrtice da base inferior
         vertices.push_back(x);
         vertices.push_back(-halfHeight);
         vertices.push_back(z);
@@ -39,7 +39,7 @@ void Prism::generatePrism()
         vertices.push_back((float)i / sides);
         vertices.push_back(0.0f);
 
-        // Vértice da base superior
+        // Vrtice da base superior
         vertices.push_back(x);
         vertices.push_back(halfHeight);
         vertices.push_back(z);
@@ -52,7 +52,7 @@ void Prism::generatePrism()
         vertices.push_back(1.0f);
     }
 
-    // Vértices para as faces laterais (com normais corretas)
+    // Vrtices para as faces laterais (com normais corretas)
     int lateralStart = (sides + 1) * 2;
     for (int i = 0; i <= sides; ++i)
     {
@@ -60,11 +60,11 @@ void Prism::generatePrism()
         float x = radius * cos(angle);
         float z = radius * sin(angle);
 
-        // Normal da face lateral (perpendicular à face)
+        // Normal da face lateral (perpendicular face)
         float nx = cos(angle);
         float nz = sin(angle);
 
-        // Vértice inferior da face lateral
+        // Vrtice inferior da face lateral
         vertices.push_back(x);
         vertices.push_back(-halfHeight);
         vertices.push_back(z);
@@ -74,7 +74,7 @@ void Prism::generatePrism()
         vertices.push_back((float)i / sides);
         vertices.push_back(0.0f);
 
-        // Vértice superior da face lateral
+        // Vrtice superior da face lateral
         vertices.push_back(x);
         vertices.push_back(halfHeight);
         vertices.push_back(z);
@@ -85,36 +85,36 @@ void Prism::generatePrism()
         vertices.push_back(1.0f);
     }
 
-    // Gerar índices para as faces laterais
+    // Gerarndices para as faces laterais
     for (int i = 0; i < sides; ++i)
     {
         int base = lateralStart + i * 2;
 
-        // Primeiro triângulo da face lateral
+        // Primeiro tringulo da face lateral
         indices.push_back(base);
         indices.push_back(base + 2);
         indices.push_back(base + 1);
 
-        // Segundo triângulo da face lateral
+        // Segundo tringulo da face lateral
         indices.push_back(base + 1);
         indices.push_back(base + 2);
         indices.push_back(base + 3);
     }
 
-    // Gerar índices para a base inferior (triângulos em leque)
+    // Gerarndices para a base inferior (tringulos em leque)
     for (int i = 1; i < sides; ++i)
     {
         indices.push_back(0);           // Centro da base inferior
-        indices.push_back(i * 2 + 2);   // Próximo vértice
-        indices.push_back(i * 2);       // Vértice atual
+        indices.push_back(i * 2 + 2);   // Prximo vrtice
+        indices.push_back(i * 2);       // Vrtice atual
     }
 
-    // Gerar índices para a base superior (triângulos em leque)
+    // Gerarndices para a base superior (tringulos em leque)
     for (int i = 1; i < sides; ++i)
     {
         indices.push_back(1);           // Centro da base superior
-        indices.push_back(i * 2 + 1);   // Vértice atual
-        indices.push_back(i * 2 + 3);   // Próximo vértice
+        indices.push_back(i * 2 + 1);   // Vrtice atual
+        indices.push_back(i * 2 + 3);   // Prximo vrtice
     }
 
     setupBuffers();
@@ -134,7 +134,7 @@ void Prism::setupBuffers()
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(GLuint), indices.data(), GL_STATIC_DRAW);
 
-    // Posição (location = 0)
+    // Posio (location = 0)
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)0);
     glEnableVertexAttribArray(0);
 
@@ -149,9 +149,8 @@ void Prism::setupBuffers()
     glBindVertexArray(0);
 }
 
-void Prism::draw(Shader& shader, glm::mat4 view)
+void Prism::draw(Shader& shader, glm::mat4 model)
 {
-    glm::mat4 model = glm::mat4(1.0f);
     model = glm::translate(model, position);
     model = glm::rotate(model, glm::radians(angle), rotation);
     model = glm::scale(model, scale);

@@ -6,7 +6,7 @@ Sofa::Sofa(glm::vec3 pos, float rotation)
 }
 
 void Sofa::init() {
-    // Base do sofá (assento)
+    // Base do sofa (assento)
     parts.push_back(new Cube(
         glm::vec3(0.0f, 0.03f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),
@@ -14,7 +14,7 @@ void Sofa::init() {
         0.0f
     ));
 
-    // Encosto do sofá
+    // Encosto do sofa
     parts.push_back(new Cube(
         glm::vec3(0.0f, 0.08f, -0.04f),
         glm::vec3(0.0f, 1.0f, 0.0f),
@@ -22,7 +22,7 @@ void Sofa::init() {
         0.0f
     ));
 
-    // Braço esquerdo
+    // Braco esquerdo
     parts.push_back(new Cube(
         glm::vec3(-0.09f, 0.05f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),
@@ -30,11 +30,27 @@ void Sofa::init() {
         0.0f
     ));
 
-    // Braço direito
+    // Braco direito
     parts.push_back(new Cube(
         glm::vec3(0.09f, 0.05f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),
         glm::vec3(0.02f, 0.08f, 0.1f),
+        0.0f
+    ));
+
+    // Almofada esquerda - flatter and wider
+    parts.push_back(new Cube(
+        glm::vec3(-0.05f, 0.065f, 0.015f),
+        glm::vec3(0.0f, 1.0f, 0.0f),
+        glm::vec3(0.03f, 0.02f, 0.03f),
+        0.0f
+    ));
+
+    // Almofada direita - flatter and wider
+    parts.push_back(new Cube(
+        glm::vec3(0.05f, 0.065f, 0.015f),
+        glm::vec3(0.0f, 1.0f, 0.0f),
+        glm::vec3(0.03f, 0.02f, 0.03f),
         0.0f
     ));
 }

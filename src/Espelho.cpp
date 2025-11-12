@@ -38,7 +38,7 @@ void Espelho::init() {
         0.0f
     ));
 
-    // Vidro do espelho (cube translúcido representado aqui)
+    // Vidro do espelho (cube translucido representado aqui)
     parts.push_back(new Cube(
         glm::vec3(0.0f, 0.08f, -0.005f),
         glm::vec3(0.0f, 1.0f, 0.0f),
@@ -46,7 +46,7 @@ void Espelho::init() {
         0.0f
     ));
 
-    // Decoração - esfera no topo
+    // Decoracao - esfera no topo
     parts.push_back(new Sphere(
         glm::vec3(0.0f, 0.195f, 0.015f),
         glm::vec3(0.0f),

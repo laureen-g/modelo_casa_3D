@@ -17,7 +17,7 @@ void Geladeira::init() {
 
     // Porta superior
     parts.push_back(new Cube(
-        glm::vec3(0.08f, 0.19f, 0.0f),
+        glm::vec3(-0.08f, 0.19f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),
         glm::vec3(0.01f, 0.12f, 0.14f),
         0.0f
@@ -25,7 +25,7 @@ void Geladeira::init() {
 
     // Porta inferior
     parts.push_back(new Cube(
-        glm::vec3(0.08f, 0.06f, 0.0f),
+        glm::vec3(-0.08f, 0.06f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),
         glm::vec3(0.01f, 0.12f, 0.14f),
         0.0f
@@ -33,7 +33,7 @@ void Geladeira::init() {
 
     // Puxador superior
     parts.push_back(new Cube(
-        glm::vec3(0.09f, 0.22f, 0.0f),
+        glm::vec3(-0.09f, 0.22f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),
         glm::vec3(0.005f, 0.02f, 0.01f),
         0.0f
@@ -41,7 +41,7 @@ void Geladeira::init() {
 
     // Puxador inferior
     parts.push_back(new Cube(
-        glm::vec3(0.09f, 0.09f, 0.0f),
+        glm::vec3(-0.09f, 0.09f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),
         glm::vec3(0.005f, 0.02f, 0.01f),
         0.0f

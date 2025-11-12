@@ -15,7 +15,7 @@ void Abajur::init() {
         0.0f
     ));
 
-    // Haste cilíndrica central
+    // Haste cilindrica central
     parts.push_back(new Cylinder(
         glm::vec3(0.0f, 0.09f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),
@@ -24,7 +24,7 @@ void Abajur::init() {
         16
     ));
 
-    // Cúpula cônica (prism com 8 lados)
+    // Capula conica (prism com 8 lados)
     parts.push_back(new Prism(
         glm::vec3(0.0f, 0.22f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),

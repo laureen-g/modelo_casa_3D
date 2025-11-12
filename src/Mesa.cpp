@@ -6,7 +6,7 @@ Mesa::Mesa(glm::vec3 pos, float rotation)
 }
 
 void Mesa::init() {
-    // Tampo da mesa (mantém como Cube)
+    // Tampo da mesa (mantem como Cube)
     parts.push_back(new Cube(
         glm::vec3(0.0f, 0.075f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),

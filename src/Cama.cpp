@@ -23,7 +23,7 @@ void Cama::init() {
         0.0f
     ));
 
-    // Pé da cama esquerdo
+    // Pe da cama esquerdo
     parts.push_back(new Cube(
         glm::vec3(-0.085f, 0.015f, 0.115f),
         glm::vec3(0.0f, 1.0f, 0.0f),
@@ -31,7 +31,7 @@ void Cama::init() {
         0.0f
     ));
 
-    // Pé da cama direito
+    // Pe da cama direito
     parts.push_back(new Cube(
         glm::vec3(0.085f, 0.015f, 0.115f),
         glm::vec3(0.0f, 1.0f, 0.0f),
@@ -39,7 +39,7 @@ void Cama::init() {
         0.0f
     ));
 
-    // Colchão
+    // Colchao
     parts.push_back(new Cube(
         glm::vec3(0.0f, 0.055f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),

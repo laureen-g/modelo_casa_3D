@@ -9,7 +9,7 @@
 #include <Luminaria.h>
 #include <Estante.h>
 #include <Espelho.h>
-#include <Abajur.h>
+#include <Comoda.h>
 #include <Shader.h>
 #include <Texture.h>
 
@@ -32,7 +32,7 @@ void Casa::draw(Shader& shader, glm::mat4 view,
     shader.setInt("texture1", 0);
     texCasa[0]->bind(0);
 
-    // CHÃO
+    // CHaO
     Cube chao(glm::vec3(0.0f, 0.05f, 0.0f),
                     glm::vec3(0.0f),
                     glm::vec3(2.0f, 0.03f, 2.0f));
@@ -102,41 +102,42 @@ void Casa::draw(Shader& shader, glm::mat4 view,
 
     paredeDivisoria20.draw(shader, view);
 
-    // SALA - Sofá, Mesa, Estante e Luminária
-    Sofa sofa(glm::vec3(-0.5f, 0.1f, 0.5f), 0.0f);
+    // SALA - Sofa, Mesa, Estante e Luminaria
+    Sofa sofa(glm::vec3(-0.5f, 0.05f, 0.5f), 180.0f);
     sofa.draw(shader, view, texSofa);
 
-    Mesa mesaSala(glm::vec3(-0.5f, 0.1f, 0.0f), 0.0f);
+    Mesa mesaSala(glm::vec3(-0.5f, 0.05f, 0.3f), 0.0f);
     mesaSala.draw(shader, view, texMesa);
 
-    Estante estante(glm::vec3(-0.8f, 0.1f, 0.7f), 0.0f);
+    Estante estante(glm::vec3(-0.95f, 0.05f, 0.4f), 90.0f);
     estante.draw(shader, view, texEstante);
 
-    Luminaria luminariaLiving(glm::vec3(-0.3f, 0.1f, 0.3f), 0.0f);
-    luminariaLiving.draw(shader, view, texLuminaria);
-
-    Espelho espelho(glm::vec3(-0.2f, 0.1f, 0.7f), 0.0f);
+    Espelho espelho(glm::vec3(-0.2f, 0.05f, 0.95f), 0.0f);
     espelho.draw(shader, view, texEspelho);
 
+    Luminaria luminaria(glm::vec3(-0.6f, 0.05f, 0.2f), 0.0f);
+    luminaria.draw(shader, view, texLuminaria);
+
+
     // QUARTO - Cama
-    Cama cama(glm::vec3(0.6f, 0.1f, -0.5f), 90.0f);
+    Cama cama(glm::vec3(0.6f, 0.05f, -0.5f), 270.0f);
     cama.draw(shader, view, texCama);
 
-    //Abajur abajur(glm::vec3(0.8f, 0.1f, -0.3f), 0.0f);
-    //abajur.draw(shader, view);
+    Comoda comoda(glm::vec3(0.70f, 0.05f, -0.35f), 270.0f);
+    comoda.draw(shader, view, texEstante);
 
     // COZINHA/SALA DE JANTAR - Mesa, Cadeira e Geladeira
-    Mesa mesaCozinha(glm::vec3(0.6f, 0.1f, 0.6f), 0.0f);
+    Mesa mesaCozinha(glm::vec3(0.6f, 0.05f, 0.6f), 0.0f);
     mesaCozinha.draw(shader, view, texMesa);
 
-    Cadeira cadeira(glm::vec3(0.4f, 0.1f, 0.5f), 0.0f);
+    Cadeira cadeira(glm::vec3(0.6f, 0.05f, 0.45f), 0.0f);
     cadeira.draw(shader, view, texCadeira);
 
-    Geladeira geladeira(glm::vec3(0.85f, 0.1f, 0.7f), 270.0f);
+    Geladeira geladeira(glm::vec3(0.95f, 0.05f, 0.7f), 0.0f);
     geladeira.draw(shader, view, texGeladeira);
 
-    // BANHEIRO - Vaso Sanitário
-    VasoSanitario vaso(glm::vec3(-0.7f, 0.1f, -0.6f), 0.0f);
+    // BANHEIRO - Vaso Sanitario
+    VasoSanitario vaso(glm::vec3(-0.7f, 0.05f, -0.6f), 0.0f);
     vaso.draw(shader, view, texVaso);
 
 }
