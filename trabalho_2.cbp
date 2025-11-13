@@ -51,6 +51,7 @@
 		<Unit filename="include/Cadeira.h" />
 		<Unit filename="include/Cama.h" />
 		<Unit filename="include/Casa.h" />
+		<Unit filename="include/Comoda.h" />
 		<Unit filename="include/Cube.h" />
 		<Unit filename="include/Cylinder.h" />
 		<Unit filename="include/Espelho.h" />
@@ -73,6 +74,7 @@
 		<Unit filename="src/Cadeira.cpp" />
 		<Unit filename="src/Cama.cpp" />
 		<Unit filename="src/Casa.cpp" />
+		<Unit filename="src/Comoda.cpp" />
 		<Unit filename="src/Cube.cpp" />
 		<Unit filename="src/Cylinder.cpp" />
 		<Unit filename="src/Espelho.cpp" />

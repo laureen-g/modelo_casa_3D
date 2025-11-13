@@ -37,6 +37,23 @@ class Casa
           const std::vector<Texture*>& texLuminaria);
 
     private:
+
+        Cube chao;
+        Cube paredeDireita, paredeEsquerda, paredeFrente, paredeFrente2, paredeFrente3;
+        Cube paredeFundo, paredeDivisoria, paredeDivisoria2, paredeDivisoria20;
+
+        // Objetos da casa
+        Sofa sofa;
+        Mesa mesaSala;
+        Mesa mesaCozinha;
+        Cadeira cadeira;
+        Cama cama;
+        Comoda comoda;
+        Estante estante;
+        Espelho espelho;
+        Geladeira geladeira;
+        Luminaria luminaria;
+        VasoSanitario vaso;
 };
 
 #endif // CASA_H

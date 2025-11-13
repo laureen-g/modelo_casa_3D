@@ -24,7 +24,7 @@ void Sofa::init() {
 
     // Braco esquerdo
     parts.push_back(new Cube(
-        glm::vec3(-0.09f, 0.05f, 0.0f),
+        glm::vec3(-0.1f, 0.05f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),
         glm::vec3(0.02f, 0.08f, 0.1f),
         0.0f
@@ -32,7 +32,7 @@ void Sofa::init() {
 
     // Braco direito
     parts.push_back(new Cube(
-        glm::vec3(0.09f, 0.05f, 0.0f),
+        glm::vec3(0.1f, 0.05f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f),
         glm::vec3(0.02f, 0.08f, 0.1f),
         0.0f
